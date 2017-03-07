@@ -1,0 +1,36 @@
+// https://www.hackerrank.com/challenges/30-bitwise-and
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+       
+       		Scanner sc = new Scanner(System.in);
+		int numOfTestCases = sc.nextInt();
+
+		for (int d = 0; d < numOfTestCases; d++) {
+			int size = sc.nextInt();
+			int k = sc.nextInt();
+			int max = 0;
+			int[] array = new int[size];
+			// Fill array
+         		for (int i = 0; i < size; i++) {
+				array[i] = i + 1;
+			}
+           		// Going thru array
+			for (int a = 0; a < size - 1; a++) {
+				for (int b = a + 1; b <= size - 1; b++) {
+					int value = array[a] & array[b];
+					if (value < k && max < value) {
+						max = value;
+					}
+				}
+			}
+			System.out.println(max);
+		}
+    
+    }
+}
