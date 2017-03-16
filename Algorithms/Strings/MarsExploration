@@ -1,0 +1,30 @@
+// https://www.hackerrank.com/challenges/mars-exploration
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String S = in.next();
+        int val = S.length();
+        int counter =0;
+        int i =0;
+       while(i<val){
+            if(S.charAt(i)!='S'){
+                counter++;
+            } 
+             if(S.charAt(i+1)!='O'){
+                counter++;
+            }
+             if(S.charAt(i+2)!='S'){
+                counter++;
+            }
+           i = i+3;
+        }
+        System.out.print(counter);
+    }
+}
